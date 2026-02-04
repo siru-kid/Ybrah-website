@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Schedule Maintenance | Blackstone Auto</title>
+    <meta
+      name="description"
+      content="Schedule maintenance with Blackstone Auto Service."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">⛭</span>
+          <span class="brand-text">Blackstone Auto</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#quotes">Quotes</a>
+          <a href="schedule.html" class="btn btn-sm">Schedule</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <div class="section-head">
+          <h1>Schedule Maintenance</h1>
+          <p>
+            Choose a service, pick a date, select a time, and submit your
+            request.
+          </p>
+        </div>
+
+        <div class="grid booking">
+          <form id="bookingForm" class="card form">
+            <div class="field">
+              <label for="service">Service</label>
+              <select id="service" required>
+                <option value="">Select a service…</option>
+                <option>Oil & Filter</option>
+                <option>Brake Inspection / Service</option>
+                <option>Diagnostics (Check Engine Light)</option>
+                <option>Maintenance Package</option>
+                <option>Tires (Swap / Balance)</option>
+                <option>Other (Describe below)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="date">Date</label>
+              <input id="date" type="date" required />
+              <div class="hint">Weekdays only in this demo.</div>
+            </div>
+
+            <div class="field">
+              <label for="time">Time</label>
+              <select id="time" required></select>
+            </div>
+
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input id="name" type="text" placeholder="Your name" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input
+                id="phone"
+                type="tel"
+                placeholder="(555) 123-4567"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="vehicle">Vehicle</label>
+              <input
+                id="vehicle"
+                type="text"
+                placeholder="e.g., 2018 Honda Civic"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="notes">Notes</label>
+              <textarea
+                id="notes"
+                rows="4"
+                placeholder="Any symptoms, special requests, or details…"
+              ></textarea>
+            </div>
+
+            <button class="btn" type="submit">Request Appointment</button>
+            <p class="muted small">
+              This demo saves requests in your browser and generates a
+              confirmation message.
+            </p>
+          </form>
+
+          <aside class="card">
+            <h2 class="h3">Your Booking Summary</h2>
+            <div class="summary" id="summary">
+              <div class="summary-row">
+                <span class="muted">Service</span><span id="sService">—</span>
+              </div>
+              <div class="summary-row">
+                <span class="muted">Date</span><span id="sDate">—</span>
+              </div>
+              <div class="summary-row">
+                <span class="muted">Time</span><span id="sTime">—</span>
+              </div>
+              <div class="summary-row">
+                <span class="muted">Name</span><span id="sName">—</span>
+              </div>
+              <div class="summary-row">
+                <span class="muted">Phone</span><span id="sPhone">—</span>
+              </div>
+              <div class="summary-row">
+                <span class="muted">Vehicle</span><span id="sVehicle">—</span>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3 class="h3">Confirmation Message</h3>
+            <p class="muted small">Copy/paste this into email or SMS:</p>
+            <textarea
+              id="confirmText"
+              class="confirm-box"
+              rows="9"
+              readonly
+            ></textarea>
+
+            <button id="copyBtn" class="btn btn-ghost" type="button">
+              Copy Confirmation
+            </button>
+
+            <div class="divider"></div>
+            <p class="muted small">
+              Want real bookings + automatic emails/texts? Connect this form to
+              a backend (Firebase/Supabase/Node).
+            </p>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <div>© <span id="year"></span> Blackstone Auto Service</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
